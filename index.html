@@ -1,1 +1,206 @@
-Some text
+{
+  "surveyId": "survey-qa-popup",
+  "surveyTitle": "Тестовый опрос",
+  "surveyDescription": "Опрос содержит все виды вопросов",
+  "surveyType": "popup",
+  "survey": {
+    "startQuestionId": "q1",
+    "gratitudeContent": {
+      "title": "Заголовок заданный через конфиг. Если не задан, используется стандартный",
+      "subtitle": "Подзаголовок заданный через конфиг. Если не задан, используется стандартный",
+      "action": "Действие"
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "type": "welcome",
+        "text": "Вопрос типа «welcome». Используется для приветствия пользователя",
+        "nextQuestionId": "q2",
+        "subtitle": "Параметризуемый подзаголовок приветственного вопроса",
+        "action": "Действие"
+      },
+      {
+        "id": "q2",
+        "type": "rating",
+        "text": "Вопрос типа «rating». Оцените, насколько вы довольны тестированием приложения?",
+        "answers": [
+          {
+            "stars": 0,
+            "nextQuestionId": "q3",
+            "label": "Не хочу отвечать"
+          },
+          {
+            "stars": 1,
+            "nextQuestionId": "finish",
+            "label": "Вариант прекращает опрос стандартным «finish»"
+          },
+          {
+            "stars": 2,
+            "nextQuestionId": "q8",
+            "label": "Вариант прекращает опрос кастомным «final»"
+          },
+          {
+            "stars": 3,
+            "nextQuestionId": "q3",
+            "label": "Пойдёт"
+          },
+          {
+            "stars": 4,
+            "nextQuestionId": "q3",
+            "label": "Всё хорошо"
+          },
+          {
+            "stars": 5,
+            "nextQuestionId": "q3",
+            "label": "Великолепно"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "type": "openQuestion",
+        "text": "Вопрос типа «openQuestion». Поделитесь мнением через комментарий",
+        "nextQuestionId": "q4"
+      },
+      {
+        "id": "q4",
+        "type": "singleChoice",
+        "text": "Вопрос типа «singleChoice». Выберите единственный вариант ответа",
+        "subtitle": "Опциональный подзаголовок",
+        "answerRequired": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Вариант 1",
+            "nextQuestionId": "q5",
+            "position": 1
+          },
+          {
+            "id": "a2",
+            "text": "Вариант 2. Специальный длинный текст для тестирования multiline",
+            "nextQuestionId": "q5",
+            "position": 2
+          },
+          {
+            "id": "a3",
+            "text": "Вариант 3",
+            "nextQuestionId": "q5",
+            "position": 3
+          },
+          {
+            "id": "a4",
+            "text": "Вариант 4",
+            "nextQuestionId": "q5",
+            "position": 4
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "type": "multipleChoice",
+        "text": "Вопроса типа «multipleChoice». Выберите один или несколько вариантов ответа",
+        "answerRequired": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q6",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q6",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3",
+            "nextQuestionId": "q6",
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "type": "multipleChoiceLite",
+        "text": "Вопроса типа «multipleChoiceLite». Выберите один или несколько вариантов ответа",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "center",
+        "answerRequired": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q7",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q7",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3",
+            "nextQuestionId": "q7",
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q7",
+        "type": "buttonChoice",
+        "text": "Вопроса типа «buttonChoice». Кликните по единственному варианту",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "center",
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ 1",
+            "nextQuestionId": "q8",
+            "position": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ 2",
+            "nextQuestionId": "q8",
+            "position": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ 3",
+            "nextQuestionId": "q8",
+            "position": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ 4. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "position": 4
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "type": "final",
+        "text": "Вопрос типа «final». Последний из вопросов. Можно завести произвольное количество вариантов финала",
+        "subtitle": "Обязательный подзаголовок. Вопрос типа «final» от «finish» тем, что запускается намеренно. Тогда как «finish» это «gratitudeContent», если он задан. Если не задан, показывается предзашитый вариант",
+        "action": "Действие"
+      }
+    ]
+  }
+}
