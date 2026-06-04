@@ -143,6 +143,7 @@
         "text": "Вопрос типа «singleChoice». Можно не выбирать ответ",
         "subtitle": "Коммент скрыт. И все позиции указаны как 0",
         "answerRequired": false,
+        "nextQuestionId": "final-no-answer",
         "showComment": false,
         "answers": [
           {
@@ -210,6 +211,7 @@
         "type": "multipleChoice",
         "text": "Вопроса типа «multipleChoice». Коммент скрыт. Можно не выбирать ответ",
         "answerRequired": false,
+        "nextQuestionId": "final-no-answer",
         "showComment": false,
         "answers": [
           {
@@ -454,6 +456,14 @@
         "type": "final",
         "text": "Вопрос типа «final». Последний из вопросов. Можно завести произвольное количество вариантов финала",
         "subtitle": "Обязательный подзаголовок. Вопрос типа «final» от «finish» тем, что запускается намеренно",
+        "action": "Открыть диплинк",
+        "deeplink": "https://sberdevices.ru/"
+      },
+      {
+        "id": "final-no-answer",
+        "type": "final",
+        "text": "Вопрос типа «final». Вы успешно проверили, что навигация из прошлого вопроса работает!",
+        "subtitle": "Обязательный подзаголовок.",
         "action": "Открыть диплинк",
         "deeplink": "https://sberdevices.ru/"
       }
