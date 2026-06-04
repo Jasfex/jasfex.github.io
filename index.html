@@ -1,14 +1,14 @@
 {
-  "surveyId": "survey-qa-popup",
+  "surveyId": "survey-qa",
   "surveyTitle": "Тестовый опрос",
   "surveyDescription": "Опрос содержит все виды вопросов",
-  "surveyType": "popup",
+  "surveyType": "fullscreen",
   "survey": {
     "startQuestionId": "q1",
     "gratitudeContent": {
-      "title": "Заголовок заданный через конфиг. Если не задан, используется стандартный",
-      "subtitle": "Подзаголовок заданный через конфиг. Если не задан, используется стандартный",
-      "action": "Действие"
+      "title": "Заголовок заданный через «gratitudeContent»",
+      "subtitle": "Подзаголовок заданный через «gratitudeContent». Если не задан, используется стандартный",
+      "action": "Текст из конфига"
     },
     "questions": [
       {
@@ -17,12 +17,14 @@
         "text": "Вопрос типа «welcome». Используется для приветствия пользователя",
         "nextQuestionId": "q2",
         "subtitle": "Параметризуемый подзаголовок приветственного вопроса",
-        "action": "Действие"
+        "action": "Текст из конфига"
       },
       {
         "id": "q2",
         "type": "rating",
         "text": "Вопрос типа «rating». Оцените, насколько вы довольны тестированием приложения?",
+        "subtitle": "Опциональный подзаголовок",
+        "showComment": false,
         "answers": [
           {
             "stars": 0,
@@ -36,7 +38,7 @@
           },
           {
             "stars": 2,
-            "nextQuestionId": "q8",
+            "nextQuestionId": "final",
             "label": "Вариант прекращает опрос кастомным «final»"
           },
           {
@@ -58,148 +60,402 @@
       },
       {
         "id": "q3",
-        "type": "openQuestion",
-        "text": "Вопрос типа «openQuestion». Поделитесь мнением через комментарий",
-        "nextQuestionId": "q4"
+        "type": "rating",
+        "text": "Вопрос типа «rating». Где «showComment»: true",
+        "subtitle": "Опциональный подзаголовок",
+        "showComment": true,
+        "answers": [
+          {
+            "stars": 0,
+            "nextQuestionId": "q4",
+            "label": "Не хочу оценивать"
+          },
+          {
+            "stars": 1,
+            "nextQuestionId": "q4",
+            "label": "Ужас"
+          },
+          {
+            "stars": 2,
+            "nextQuestionId": "q4",
+            "label": "Плохо"
+          },
+          {
+            "stars": 3,
+            "nextQuestionId": "q4",
+            "label": "Нормально"
+          },
+          {
+            "stars": 4,
+            "nextQuestionId": "q4",
+            "label": "Хорошо"
+          },
+          {
+            "stars": 5,
+            "nextQuestionId": "q4",
+            "label": "ВЕЛИКОЛЕПНО!"
+          }
+        ]
       },
       {
         "id": "q4",
+        "type": "openQuestion",
+        "text": "Вопрос типа «openQuestion». Поделитесь мнением через комментарий",
+        "nextQuestionId": "q5"
+      },
+      {
+        "id": "q5",
         "type": "singleChoice",
         "text": "Вопрос типа «singleChoice». Выберите единственный вариант ответа",
         "subtitle": "Опциональный подзаголовок",
         "answerRequired": true,
+        "showComment": true,
         "answers": [
           {
             "id": "a1",
             "text": "Вариант 1",
-            "nextQuestionId": "q5",
+            "nextQuestionId": "q6",
             "position": 1
           },
           {
             "id": "a2",
             "text": "Вариант 2. Специальный длинный текст для тестирования multiline",
-            "nextQuestionId": "q5",
+            "nextQuestionId": "q6",
             "position": 2
           },
           {
             "id": "a3",
             "text": "Вариант 3",
-            "nextQuestionId": "q5",
+            "nextQuestionId": "q6",
             "position": 3
           },
           {
             "id": "a4",
             "text": "Вариант 4",
-            "nextQuestionId": "q5",
+            "nextQuestionId": "q6",
             "position": 4
           }
         ]
       },
       {
-        "id": "q5",
-        "type": "multipleChoice",
-        "text": "Вопроса типа «multipleChoice». Выберите один или несколько вариантов ответа",
-        "answerRequired": true,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ с весом 1",
-            "nextQuestionId": "q6",
-            "weight": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ с весом 2",
-            "nextQuestionId": "q6",
-            "weight": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ с весом 3",
-            "nextQuestionId": "q6",
-            "weight": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 4
-          }
-        ]
-      },
-      {
         "id": "q6",
-        "type": "multipleChoiceLite",
-        "text": "Вопроса типа «multipleChoiceLite». Выберите один или несколько вариантов ответа",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "center",
-        "answerRequired": true,
+        "type": "singleChoice",
+        "text": "Вопрос типа «singleChoice». Можно не выбирать ответ",
+        "subtitle": "Коммент скрыт. И все позиции указаны как 0",
+        "answerRequired": false,
+        "showComment": false,
         "answers": [
           {
             "id": "a1",
-            "text": "Ответ с весом 1",
+            "text": "Вариант 1",
             "nextQuestionId": "q7",
-            "weight": 1
+            "position": 0
           },
           {
             "id": "a2",
-            "text": "Ответ с весом 2",
+            "text": "Вариант 2",
             "nextQuestionId": "q7",
-            "weight": 2
+            "position": 0
           },
           {
             "id": "a3",
-            "text": "Ответ с весом 3",
+            "text": "Вариант 3",
             "nextQuestionId": "q7",
-            "weight": 3
+            "position": 0
           },
           {
             "id": "a4",
-            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 4
+            "text": "Показать коммент, если выбран",
+            "nextQuestionId": "q7",
+            "commentable": true,
+            "position": 0
           }
         ]
       },
       {
         "id": "q7",
+        "type": "multipleChoice",
+        "text": "Вопроса типа «multipleChoice». Выберите один или несколько вариантов ответа",
+        "answerRequired": true,
+        "showComment": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q8",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q8",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3",
+            "nextQuestionId": "q8",
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q8",
+        "type": "multipleChoice",
+        "text": "Вопроса типа «multipleChoice». Коммент скрыт. Можно не выбирать ответ",
+        "answerRequired": false,
+        "showComment": false,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q9",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q9",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3. Показать коммент, если выбран",
+            "nextQuestionId": "q9",
+            "commentable": true,
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q9",
+        "type": "multipleChoiceLite",
+        "text": "Вопроса типа «multipleChoiceLite». Выберите один или несколько вариантов ответа",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "center",
+        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
+        "answerRequired": true,
+        "showComment": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q10",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q10",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3",
+            "nextQuestionId": "q10",
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "type": "multipleChoiceLite",
+        "text": "Вопроса типа «multipleChoiceLite». left",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "left",
+        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
+        "answerRequired": true,
+        "showComment": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q11",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q11",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3",
+            "nextQuestionId": "q11",
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "type": "multipleChoiceLite",
+        "text": "Вопроса типа «multipleChoiceLite». right",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "right",
+        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
+        "answerRequired": true,
+        "showComment": true,
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ с весом 1",
+            "nextQuestionId": "q12",
+            "weight": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ с весом 2",
+            "nextQuestionId": "q12",
+            "weight": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ с весом 3",
+            "nextQuestionId": "q12",
+            "weight": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ с весом 4. Побеждает ответ с наибольшим весом. Этот ведёт на «finish»",
+            "nextQuestionId": "finish",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "id": "q12",
         "type": "buttonChoice",
         "text": "Вопроса типа «buttonChoice». Кликните по единственному варианту",
+        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
         "subtitle": "Опциональный подзаголовок",
         "textPosition": "center",
         "answers": [
           {
             "id": "a1",
             "text": "Ответ 1",
-            "nextQuestionId": "q8",
+            "nextQuestionId": "q13",
             "position": 1
           },
           {
             "id": "a2",
             "text": "Ответ 2",
-            "nextQuestionId": "q8",
+            "nextQuestionId": "q13",
             "position": 2
           },
           {
             "id": "a3",
             "text": "Ответ 3",
-            "nextQuestionId": "q8",
+            "nextQuestionId": "q13",
             "position": 3
           },
           {
             "id": "a4",
-            "text": "Ответ 4. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
+            "text": "Ответ 4",
+            "nextQuestionId": "q13",
             "position": 4
           }
         ]
       },
       {
-        "id": "q8",
+        "id": "q13",
+        "type": "buttonChoice",
+        "text": "Вопроса типа «buttonChoice». left",
+        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "left",
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ 1",
+            "nextQuestionId": "q14",
+            "position": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ 2",
+            "nextQuestionId": "q14",
+            "position": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ 3",
+            "nextQuestionId": "q14",
+            "position": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ 4",
+            "nextQuestionId": "q14",
+            "position": 4
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "type": "buttonChoice",
+        "text": "Вопроса типа «buttonChoice». right",
+        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
+        "subtitle": "Опциональный подзаголовок",
+        "textPosition": "right",
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Ответ 1",
+            "nextQuestionId": "final",
+            "position": 1
+          },
+          {
+            "id": "a2",
+            "text": "Ответ 2",
+            "nextQuestionId": "final",
+            "position": 2
+          },
+          {
+            "id": "a3",
+            "text": "Ответ 3",
+            "nextQuestionId": "final",
+            "position": 3
+          },
+          {
+            "id": "a4",
+            "text": "Ответ 4",
+            "nextQuestionId": "final",
+            "position": 4
+          }
+        ]
+      },
+      {
+        "id": "final",
         "type": "final",
         "text": "Вопрос типа «final». Последний из вопросов. Можно завести произвольное количество вариантов финала",
-        "subtitle": "Обязательный подзаголовок. Вопрос типа «final» от «finish» тем, что запускается намеренно. Тогда как «finish» это «gratitudeContent», если он задан. Если не задан, показывается предзашитый вариант",
-        "action": "Действие"
+        "subtitle": "Обязательный подзаголовок. Вопрос типа «final» от «finish» тем, что запускается намеренно",
+        "action": "Открыть диплинк",
+        "deeplink": "https://sberdevices.ru/"
       }
     ]
   }
