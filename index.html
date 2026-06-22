@@ -15,9 +15,32 @@
         "id": "q1",
         "type": "welcome",
         "text": "Вопрос типа «welcome». Используется для приветствия пользователя",
-        "nextQuestionId": "q2",
+        "nextQuestionId": "q2-multi",
         "subtitle": "Параметризуемый подзаголовок приветственного вопроса",
         "action": "Текст из конфига"
+      },
+      {
+        "id": "q2-multi",
+        "type": "multiRating",
+        "text": "Оцените, насколько вы довольны SberBox?",
+        "nextQuestionId": "q2",
+        "answers": [
+          {
+            "id": "a1",
+            "text": "Понимание команд",
+            "stars": 0
+          },
+          {
+            "id": "a2",
+            "text": "Скорость реакции",
+            "stars": 0
+          },
+          {
+            "id": "a3",
+            "text": "Точность результатов",
+            "stars": 0
+          }
+        ]
       },
       {
         "id": "q2",
