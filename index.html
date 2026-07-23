@@ -1,495 +1,1066 @@
 {
-  "surveyId": "survey-qa",
-  "surveyTitle": "Тестовый опрос",
-  "surveyDescription": "Опрос содержит все виды вопросов",
-  "surveyType": "fullscreen",
-  "survey": {
-    "startQuestionId": "q1",
-    "gratitudeContent": {
-      "title": "Заголовок заданный через «gratitudeContent»",
-      "subtitle": "Подзаголовок заданный через «gratitudeContent». Если не задан, используется стандартный",
-      "action": "Текст из конфига"
-    },
-    "questions": [
-      {
-        "id": "q1",
-        "type": "welcome",
-        "text": "Вопрос типа «welcome». Используется для приветствия пользователя",
-        "nextQuestionId": "q2-multi",
-        "subtitle": "Параметризуемый подзаголовок приветственного вопроса",
-        "action": "Текст из конфига"
-      },
-      {
-        "id": "q2-multi",
-        "type": "multiRating",
-        "text": "Оцените, насколько вы довольны SberBox?",
-        "nextQuestionId": "q2",
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Понимание команд",
-            "stars": 0
-          },
-          {
-            "id": "a2",
-            "text": "Скорость реакции",
-            "stars": 0
-          },
-          {
-            "id": "a3",
-            "text": "Точность результатов",
-            "stars": 0
-          }
-        ]
-      },
-      {
-        "id": "q2",
-        "type": "rating",
-        "text": "Вопрос типа «rating». Оцените, насколько вы довольны тестированием приложения?",
-        "subtitle": "Опциональный подзаголовок",
-        "showComment": false,
-        "answers": [
-          {
-            "stars": 0,
-            "nextQuestionId": "q3",
-            "label": "Не хочу отвечать"
-          },
-          {
-            "stars": 1,
-            "nextQuestionId": "finish",
-            "label": "Вариант прекращает опрос стандартным «finish»"
-          },
-          {
-            "stars": 2,
-            "nextQuestionId": "final",
-            "label": "Вариант прекращает опрос кастомным «final»"
-          },
-          {
-            "stars": 3,
-            "nextQuestionId": "q3",
-            "label": "Пойдёт"
-          },
-          {
-            "stars": 4,
-            "nextQuestionId": "q3",
-            "label": "Всё хорошо"
-          },
-          {
-            "stars": 5,
-            "nextQuestionId": "q3",
-            "label": "Великолепно"
-          }
-        ]
-      },
-      {
-        "id": "q3",
-        "type": "rating",
-        "text": "Вопрос типа «rating». Где «showComment»: true",
-        "subtitle": "Опциональный подзаголовок",
-        "showComment": true,
-        "answers": [
-          {
-            "stars": 0,
-            "nextQuestionId": "q4",
-            "label": "Не хочу оценивать"
-          },
-          {
-            "stars": 1,
-            "nextQuestionId": "q4",
-            "label": "Ужас"
-          },
-          {
-            "stars": 2,
-            "nextQuestionId": "q4",
-            "label": "Плохо"
-          },
-          {
-            "stars": 3,
-            "nextQuestionId": "q4",
-            "label": "Нормально"
-          },
-          {
-            "stars": 4,
-            "nextQuestionId": "q4",
-            "label": "Хорошо"
-          },
-          {
-            "stars": 5,
-            "nextQuestionId": "q4",
-            "label": "ВЕЛИКОЛЕПНО!"
-          }
-        ]
-      },
-      {
-        "id": "q4",
-        "type": "openQuestion",
-        "text": "Вопрос типа «openQuestion». Поделитесь мнением через комментарий",
-        "nextQuestionId": "q5"
-      },
-      {
-        "id": "q5",
-        "type": "singleChoice",
-        "text": "Вопрос типа «singleChoice». Выберите единственный вариант ответа",
-        "subtitle": "Опциональный подзаголовок",
-        "answerRequired": true,
-        "showComment": true,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Вариант 1",
-            "nextQuestionId": "q6",
-            "position": 1
-          },
-          {
-            "id": "a2",
-            "text": "Вариант 2. Специальный длинный текст для тестирования multiline",
-            "nextQuestionId": "q6",
-            "position": 2
-          },
-          {
-            "id": "a3",
-            "text": "Вариант 3",
-            "nextQuestionId": "q6",
-            "position": 3
-          },
-          {
-            "id": "a4",
-            "text": "Вариант 4",
-            "nextQuestionId": "q6",
-            "position": 4
-          }
-        ]
-      },
-      {
-        "id": "q6",
-        "type": "singleChoice",
-        "text": "Вопрос типа «singleChoice». Можно не выбирать ответ",
-        "subtitle": "Коммент скрыт. И все позиции указаны как 0",
-        "answerRequired": false,
-        "nextQuestionId": "final-no-answer",
-        "showComment": false,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Вариант 1",
-            "nextQuestionId": "q7",
-            "position": 0
-          },
-          {
-            "id": "a2",
-            "text": "Вариант 2",
-            "nextQuestionId": "q7",
-            "position": 0
-          },
-          {
-            "id": "a3",
-            "text": "Вариант 3",
-            "nextQuestionId": "q7",
-            "position": 0
-          },
-          {
-            "id": "a4",
-            "text": "Показать коммент, если выбран",
-            "nextQuestionId": "q7",
-            "commentable": true,
-            "position": 0
-          }
-        ]
-      },
-      {
-        "id": "q7",
-        "type": "multipleChoice",
-        "text": "Вопроса типа «multipleChoice». Выберите один или несколько вариантов ответа",
-        "answerRequired": true,
-        "showComment": true,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ с весом 1",
-            "nextQuestionId": "q8",
-            "weight": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ с весом 2",
-            "nextQuestionId": "q8",
-            "weight": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ с весом 3",
-            "nextQuestionId": "q8",
-            "weight": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ с весом 0. Побеждает ответ с наименьшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 0
-          }
-        ]
-      },
-      {
-        "id": "q8",
-        "type": "multipleChoice",
-        "text": "Вопроса типа «multipleChoice». Коммент скрыт. Можно не выбирать ответ",
-        "answerRequired": false,
-        "nextQuestionId": "final-no-answer",
-        "showComment": false,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ с весом 1",
-            "nextQuestionId": "q9",
-            "weight": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ с весом 2",
-            "nextQuestionId": "q9",
-            "weight": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ с весом 3. Показать коммент, если выбран",
-            "nextQuestionId": "q9",
-            "commentable": true,
-            "weight": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ с весом 0. Побеждает ответ с наименьшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 0
-          }
-        ]
-      },
-      {
-        "id": "q9",
-        "type": "multipleChoiceLite",
-        "text": "Вопроса типа «multipleChoiceLite». Выберите один или несколько вариантов ответа",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "center",
-        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
-        "answerRequired": true,
-        "showComment": true,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ с весом 1",
-            "nextQuestionId": "q10",
-            "weight": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ с весом 2",
-            "nextQuestionId": "q10",
-            "weight": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ с весом 3",
-            "nextQuestionId": "q10",
-            "weight": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ с весом 0. Побеждает ответ с наименьшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 0
-          }
-        ]
-      },
-      {
-        "id": "q10",
-        "type": "multipleChoiceLite",
-        "text": "Вопроса типа «multipleChoiceLite». left",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "left",
-        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
-        "answerRequired": true,
-        "showComment": true,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ с весом 1",
-            "nextQuestionId": "q11",
-            "weight": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ с весом 2",
-            "nextQuestionId": "q11",
-            "weight": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ с весом 3",
-            "nextQuestionId": "q11",
-            "weight": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ с весом 0. Побеждает ответ с наименьшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 0
-          }
-        ]
-      },
-      {
-        "id": "q11",
-        "type": "multipleChoiceLite",
-        "text": "Вопроса типа «multipleChoiceLite». right",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "right",
-        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
-        "answerRequired": true,
-        "showComment": true,
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ с весом 1",
-            "nextQuestionId": "q12",
-            "weight": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ с весом 2",
-            "nextQuestionId": "q12",
-            "weight": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ с весом 3",
-            "nextQuestionId": "q12",
-            "weight": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ с весом 0. Побеждает ответ с наименьшим весом. Этот ведёт на «finish»",
-            "nextQuestionId": "finish",
-            "weight": 0
-          }
-        ]
-      },
-      {
-        "id": "q12",
-        "type": "buttonChoice",
-        "text": "Вопроса типа «buttonChoice». Кликните по единственному варианту",
-        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "center",
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ 1",
-            "nextQuestionId": "q13",
-            "position": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ 2",
-            "nextQuestionId": "q13",
-            "position": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ 3",
-            "nextQuestionId": "q13",
-            "position": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ 4",
-            "nextQuestionId": "q13",
-            "position": 4
-          }
-        ]
-      },
-      {
-        "id": "q13",
-        "type": "buttonChoice",
-        "text": "Вопроса типа «buttonChoice». left",
-        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "left",
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ 1",
-            "nextQuestionId": "q14",
-            "position": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ 2",
-            "nextQuestionId": "q14",
-            "position": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ 3",
-            "nextQuestionId": "q14",
-            "position": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ 4",
-            "nextQuestionId": "q14",
-            "position": 4
-          }
-        ]
-      },
-      {
-        "id": "q14",
-        "type": "buttonChoice",
-        "text": "Вопроса типа «buttonChoice». right",
-        "imageUrl": "https://cdn.sberdevices.ru/subscriptions/landing/resources/v1/images/main_screen_active_subscription.webp",
-        "subtitle": "Опциональный подзаголовок",
-        "textPosition": "right",
-        "answers": [
-          {
-            "id": "a1",
-            "text": "Ответ 1",
-            "nextQuestionId": "final",
-            "position": 1
-          },
-          {
-            "id": "a2",
-            "text": "Ответ 2",
-            "nextQuestionId": "final",
-            "position": 2
-          },
-          {
-            "id": "a3",
-            "text": "Ответ 3",
-            "nextQuestionId": "final",
-            "position": 3
-          },
-          {
-            "id": "a4",
-            "text": "Ответ 4",
-            "nextQuestionId": "final",
-            "position": 4
-          }
-        ]
-      },
-      {
-        "id": "final",
-        "type": "final",
-        "text": "Вопрос типа «final». Последний из вопросов. Можно завести произвольное количество вариантов финала",
-        "subtitle": "Обязательный подзаголовок. Вопрос типа «final» от «finish» тем, что запускается намеренно",
-        "action": "Открыть диплинк",
-        "deeplink": "https://sberdevices.ru/"
-      },
-      {
-        "id": "final-no-answer",
-        "type": "final",
-        "text": "Вопрос типа «final». Вы успешно проверили, что навигация из прошлого вопроса работает!",
-        "subtitle": "Обязательный подзаголовок.",
-        "action": "Открыть диплинк",
-        "deeplink": "https://sberdevices.ru/"
-      }
-    ]
-  }
+"surveyId": "survey-child-room",
+"surveyType": "fullscreen",
+"survey": {
+"startQuestionId": "q1",
+"questions": [
+{
+"id": "q1",
+"type": "singleChoice",
+"text": "Ваш возраст",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q2",
+"answers": [
+{
+"id": "a1",
+"text": "Менее 18 лет",
+"nextQuestionId": "finish",
+"position": 1,
+"commentable": false
+},
+{
+"id": "a2",
+"text": "От 18 до 24 лет",
+"nextQuestionId": "q2",
+"position": 2,
+"commentable": false
+},
+{
+"id": "a3",
+"text": "От 25 до 34 лет",
+"nextQuestionId": "q2",
+"position": 3,
+"commentable": false
+},
+{
+"id": "a4",
+"text": "От 35 до 44 лет",
+"nextQuestionId": "q2",
+"position": 4,
+"commentable": false
+},
+{
+"id": "a5",
+"text": "От 45 до 54 лет",
+"nextQuestionId": "q2",
+"position": 5,
+"commentable": false
+},
+{
+"id": "a6",
+"text": "От 55 до 64 лет",
+"nextQuestionId": "q2",
+"position": 6,
+"commentable": false
+},
+{
+"id": "a7",
+"text": "Старше 64 лет",
+"nextQuestionId": "q2",
+"position": 7,
+"commentable": false
+}
+]
+},
+{
+"id": "q2",
+"type": "multipleChoice",
+"text": "Кто смотрит контент на этом ТВ?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q3",
+"answers": [
+{
+"id": "a1",
+"text": "Дети до 12 лет включительно",
+"nextQuestionId": "q3",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Дети старше 12 лет",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a3",
+"text": "Муж/жена",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a4",
+"text": "Брат/сестра",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a5",
+"text": "Родители",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a6",
+"text": "Бабушки/дедушки",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a7",
+"text": "Парень/девушка",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a8",
+"text": "Друзья",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a9",
+"text": "Другие родственники",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a10",
+"text": "Другие люди (не родственники)",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a11",
+"text": "Только я",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 2
+}
+]
+},
+{
+"id": "q3",
+"type": "singleChoice",
+"text": "Как часто ребёнок младше 12 лет смотрит телевизор?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q4",
+"answers": [
+{
+"id": "a1",
+"text": "Каждый день",
+"nextQuestionId": "q4",
+"position": 1,
+"commentable": false
+},
+{
+"id": "a2",
+"text": "Несколько раз в неделю",
+"nextQuestionId": "q4",
+"position": 2,
+"commentable": false
+},
+{
+"id": "a3",
+"text": "Примерно раз в неделю",
+"nextQuestionId": "q4",
+"position": 3,
+"commentable": false
+},
+{
+"id": "a4",
+"text": "Несколько раз в месяц",
+"nextQuestionId": "q4",
+"position": 4,
+"commentable": false
+},
+{
+"id": "a5",
+"text": "Примерно раз в месяц",
+"nextQuestionId": "q4",
+"position": 5,
+"commentable": false
+},
+{
+"id": "a6",
+"text": "Реже",
+"nextQuestionId": "q4",
+"position": 6,
+"commentable": false
+}
+]
+},
+{
+"id": "q4",
+"type": "singleChoice",
+"text": "Сколько лет этому ребёнку?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q5",
+"answers": [
+{
+"id": "a1",
+"text": "Меньше 1 года",
+"nextQuestionId": "q5",
+"position": 1,
+"commentable": false
+},
+{
+"id": "a2",
+"text": "От 1 до 3 лет",
+"nextQuestionId": "q5",
+"position": 2,
+"commentable": false
+},
+{
+"id": "a3",
+"text": "От 4 до 6 лет",
+"nextQuestionId": "q5",
+"position": 3,
+"commentable": false
+},
+{
+"id": "a4",
+"text": "От 7 до 9 лет",
+"nextQuestionId": "q5",
+"position": 4,
+"commentable": false
+},
+{
+"id": "a5",
+"text": "От 10 до 12 лет",
+"nextQuestionId": "q5",
+"position": 5,
+"commentable": false
+}
+]
+},
+{
+"id": "q5",
+"type": "singleChoice",
+"text": "Кто обычно выбирает, что смотрит этот ребёнок?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q6",
+"answers": [
+{
+"id": "a1",
+"text": "Выбирает кто-то из взрослых",
+"nextQuestionId": "q6",
+"position": 1,
+"commentable": false
+},
+{
+"id": "a2",
+"text": "Выбираем вместе с ребёнком",
+"nextQuestionId": "q6",
+"position": 2,
+"commentable": false
+},
+{
+"id": "a3",
+"text": "Ребёнок выбирает сам",
+"nextQuestionId": "q6",
+"position": 3,
+"commentable": false
+}
+]
+},
+{
+"id": "q6",
+"type": "multipleChoice",
+"text": "О каких сервисах этого телевизора вы знаете?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q7",
+"answers": [
+{
+"id": "a1",
+"text": "Специальный раздел для детей (Детский профиль)",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Возможность установки приложений",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a3",
+"text": "Онлайн-кинотеатры (Okko, Кинопоиск и т.п.)",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a4",
+"text": "Видеосервисы (VK Видео, Rutube и т.п.)",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a5",
+"text": "Голосовой ассистент Салют",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a6",
+"text": "Рекомендации на Главной",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a7",
+"text": "Просмотр ТВ-каналов",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a8",
+"text": "Родительский контроль",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a9",
+"text": "История просмотров",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a10",
+"text": "Избранное / Смотреть позже",
+"nextQuestionId": "q7",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a11",
+"text": "Ничего из перечисленного",
+"nextQuestionId": "q7",
+"position": 11,
+"commentable": false,
+"weight": 1
+}
+]
+},
+{
+"id": "q7",
+"type": "multipleChoice",
+"text": "Каким способом вы включаете контент для ребёнка? Выберите все подходящие варианты",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q8a",
+"answers": [
+{
+"id": "a1",
+"text": "Детский раздел на телевизоре (детский профиль/детская комната)",
+"nextQuestionId": "q8b",
+"position": -1,
+"commentable": false,
+"weight": 2
+},
+{
+"id": "a2",
+"text": "Детский раздел в онлайн-кинотеатрах и сервисах (Okko, Кинопоиск, VK Видео и т.п.)",
+"nextQuestionId": "q8a",
+"position": -1,
+"commentable": false,
+"weight": 3
+},
+{
+"id": "a3",
+"text": "Поиск на главной странице телевизора",
+"nextQuestionId": "q8a",
+"position": -1,
+"commentable": false,
+"weight": 3
+},
+{
+"id": "a4",
+"text": "Поиск на главной странице в онлайн-кинотеатрах и сервисах (Okko, Кинопоиск, VK Видео и т.п.)",
+"nextQuestionId": "q8a",
+"position": -1,
+"commentable": false,
+"weight": 3
+},
+{
+"id": "a5",
+"text": "Эфирные ТВ-каналы",
+"nextQuestionId": "q8a",
+"position": -1,
+"commentable": false,
+"weight": 3
+},
+{
+"id": "a6",
+"text": "Рекомендации на главном экране телевизора",
+"nextQuestionId": "q8a",
+"position": -1,
+"commentable": false,
+"weight": 3
+},
+{
+"id": "a7",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "q8a",
+"position": 7,
+"commentable": true,
+"weight": 3
+},
+{
+"id": "a8",
+"text": "Я не включаю контент для ребёнка",
+"nextQuestionId": "finish",
+"position": 8,
+"commentable": false,
+"weight": 1
+}
+]
+},
+{
+"id": "q8a",
+"type": "singleChoice",
+"text": "А каким способом вы включаете контент для ребёнка чаще всего? Выберите один вариант",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q9a",
+"answers": [
+{
+"id": "a1",
+"text": "Детский раздел на телевизоре (детский профиль/детская комната)",
+"nextQuestionId": "q9a",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a2",
+"text": "Детский раздел в онлайн-кинотеатрах и сервисах (Okko, Кинопоиск, VK Видео и т.п.)",
+"nextQuestionId": "q9a",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a3",
+"text": "Поиск на главной странице телевизора",
+"nextQuestionId": "q9a",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a4",
+"text": "Поиск на главной странице в онлайн-кинотеатрах и сервисах (Okko, Кинопоиск, VK Видео и т.п.)",
+"nextQuestionId": "q9a",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a5",
+"text": "Эфирные ТВ-каналы",
+"nextQuestionId": "q9a",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a6",
+"text": "Рекомендации на главном экране телевизора",
+"nextQuestionId": "q9a",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a7",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "q9a",
+"position": 7,
+"commentable": true
+}
+]
+},
+{
+"id": "q8b",
+"type": "singleChoice",
+"text": "А каким способом вы включаете контент для ребёнка чаще всего? Выберите один вариант",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q9b",
+"answers": [
+{
+"id": "a1",
+"text": "Детский раздел на телевизоре (детский профиль/детская комната)",
+"nextQuestionId": "q9c",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a2",
+"text": "Детский раздел в онлайн-кинотеатрах и сервисах (Okko, Кинопоиск, VK Видео и т.п.)",
+"nextQuestionId": "q9b",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a3",
+"text": "Поиск на главной странице телевизора",
+"nextQuestionId": "q9b",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a4",
+"text": "Поиск на главной странице в онлайн-кинотеатрах и сервисах (Okko, Кинопоиск, VK Видео и т.п.)",
+"nextQuestionId": "q9b",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a5",
+"text": "Эфирные ТВ-каналы",
+"nextQuestionId": "q9b",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a6",
+"text": "Рекомендации на главном экране телевизора",
+"nextQuestionId": "q9b",
+"position": -1,
+"commentable": false
+},
+{
+"id": "a7",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "q9b",
+"position": 7,
+"commentable": true
+}
+]
+},
+{
+"id": "q9a",
+"type": "multipleChoice",
+"text": "Почему вы пользуетесь именно этим способом?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q11",
+"answers": [
+{
+"id": "a1",
+"text": "Быстрее других способов",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Есть подписка на сервис",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a3",
+"text": "Большой выбор мультфильмов / детского контента",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a4",
+"text": "Есть контент, который смотрит ребёнок",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a5",
+"text": "Быстро нахожу, что включить",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a6",
+"text": "Легко продолжить просмотр с момента, на котором остановились",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a7",
+"text": "Меньше риск, что ребёнок увидит неподходящий контент",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a8",
+"text": "Этот способ привычнее, не хочу разбираться в других",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a9",
+"text": "Работает без зависаний и ошибок",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a10",
+"text": "Ребёнок сам легко разбирается",
+"nextQuestionId": "q11",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a11",
+"text": "Не знал(а), что есть другой способ",
+"nextQuestionId": "q11",
+"position": 11,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a12",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "q11",
+"position": 12,
+"commentable": true,
+"weight": 1
+}
+]
+},
+{
+"id": "q9b",
+"type": "multipleChoice",
+"text": "Почему вы пользуетесь именно этим способом?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "q10",
+"answers": [
+{
+"id": "a1",
+"text": "Быстрее других способов",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Есть подписка на сервис",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a3",
+"text": "Большой выбор мультфильмов / детского контента",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a4",
+"text": "Есть контент, который смотрит ребёнок",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a5",
+"text": "Быстро нахожу, что включить",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a6",
+"text": "Легко продолжить просмотр с момента, на котором остановились",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a7",
+"text": "Меньше риск, что ребёнок увидит неподходящий контент",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a8",
+"text": "Этот способ привычнее, не хочу разбираться в других",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a9",
+"text": "Работает без зависаний и ошибок",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a10",
+"text": "Ребёнок сам легко разбирается",
+"nextQuestionId": "q10",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a11",
+"text": "Не знал(а), что есть другой способ",
+"nextQuestionId": "q10",
+"position": 11,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a12",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "q10",
+"position": 12,
+"commentable": true,
+"weight": 1
+}
+]
+},
+{
+"id": "q9c",
+"type": "multipleChoice",
+"text": "Почему вы пользуетесь именно этим способом?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "finish",
+"answers": [
+{
+"id": "a1",
+"text": "Быстрее других способов",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Есть подписка на сервис",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a3",
+"text": "Большой выбор мультфильмов / детского контента",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a4",
+"text": "Есть контент, который смотрит ребёнок",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a5",
+"text": "Быстро нахожу, что включить",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a6",
+"text": "Легко продолжить просмотр с момента, на котором остановились",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a7",
+"text": "Меньше риск, что ребёнок увидит неподходящий контент",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a8",
+"text": "Этот способ привычнее, не хочу разбираться в других",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a9",
+"text": "Работает без зависаний и ошибок",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a10",
+"text": "Ребёнок сам легко разбирается",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a11",
+"text": "Не знал(а), что есть другой способ",
+"nextQuestionId": "finish",
+"position": 11,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a12",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "finish",
+"position": 12,
+"commentable": true,
+"weight": 1
+}
+]
+},
+{
+"id": "q10",
+"type": "multipleChoice",
+"text": "Что помешало детскому профилю стать основным способом?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "finish",
+"answers": [
+{
+"id": "a1",
+"text": "Другой способ проще",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Мало нового контента",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a3",
+"text": "Неудобно искать нужный контент",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a4",
+"text": "Неудобно управлять с пульта",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a5",
+"text": "Детский профиль неудобно запускать",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a6",
+"text": "Работает с ошибками/зависает",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a7",
+"text": "Не верю в безопасность детского профиля",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a8",
+"text": "Там нет того, что было бы интересно моему ребёнку",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a9",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "finish",
+"position": 9,
+"commentable": true,
+"weight": 1
+}
+]
+},
+{
+"id": "q11",
+"type": "multipleChoice",
+"text": "На телевизоре есть детский профиль, где только безопасный контент. Расскажите, почему вы им не пользуетесь?",
+"answerRequired": true,
+"showComment": false,
+"nextQuestionId": "finish",
+"answers": [
+{
+"id": "a1",
+"text": "Не знаю о нём",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a2",
+"text": "Не понимаю, чем он полезен",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a3",
+"text": "Не верю в его безопасность",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a4",
+"text": "Проще искать контент другим способом",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a5",
+"text": "Его неудобно запускать",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a6",
+"text": "Неудобно искать нужный контент",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a7",
+"text": "Работает с ошибками/зависает",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a8",
+"text": "Там нет того, что было бы интересно моему ребёнку",
+"nextQuestionId": "finish",
+"position": -1,
+"commentable": false,
+"weight": 1
+},
+{
+"id": "a9",
+"text": "Свой вариант (впишите, пожалуйста)",
+"nextQuestionId": "finish",
+"position": 9,
+"commentable": true,
+"weight": 1
+}
+]
+}
+]
+}
 }
